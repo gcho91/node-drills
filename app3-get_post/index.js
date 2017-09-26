@@ -8,6 +8,15 @@ app.use(bodyParser.json());
 
 
 
+app.get('/items', function(req, res, next){
+	res.status(200).json(items);
+})
+
+app.post('/items', function(req, res, next) {
+	// console.log(req.body)
+	items.push(req.body);
+	res.status(200).json(items);
+})
 
 
 app.listen(port, function() {
